@@ -1,0 +1,16 @@
+.navContainer {
+    display: flex;
+    padding: 8px;
+    flex-direction: row;
+    background-color: blanchedalmond;
+    align-items: center;
+    justify-content: space-between;
+}
+#logo {
+    width: 100px;
+}
+
+#cart {
+    margin-right: 15px;
+    height: 64px;
+}

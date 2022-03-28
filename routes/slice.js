@@ -1,5 +1,10 @@
 const express = require('express');
-const router = express.Router;
+const router = express.Router();
+
+const slice = require('../controllers/slice')
 
 router.route('/')
-    .get(res.send('bbbbbb'))
+    .get(slice.index)
+
+
+module.exports = router
