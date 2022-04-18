@@ -1,3 +1,22 @@
-<% layout('layout/boilerplate') %> 
+<% layout('layout/boilerplate') %>
+    <link rel="stylesheet" href="styles/index.css">
 
-<h1>im here too</h1>
+    <div class="salesContainer">
+        <div class="saleImgContainer">
+            <img class="saleImg" src="/imgs/verticalImg.jfif" alt="">
+        </div>
+        <div class="imgsGrid">
+            <% for (let i=0; i < 4; i++) { %>
+                <div class="gridItem">
+                    <a class="gridImgATAG" href="/products/<%= products[i]._id %>"><img class="gridImg"
+                            src="<%= products[i].imgSrc %>" alt=""></a>
+                    <span>
+                        <%= products[i].name %>
+                    </span>
+                    <span>
+                        <%= products[i].price %>
+                    </span>
+                </div>
+                <% } %>
+        </div>
+    </div>

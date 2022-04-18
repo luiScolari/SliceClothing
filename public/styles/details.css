@@ -1,0 +1,34 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 1000px;
+}
+
+.productImgDiv {
+    margin-top: 70px;
+    margin-left: 100px;
+}
+
+.productImg {
+    width: 500px;
+    height: 600px;
+}
+
+.rightBar {
+    display: flex;
+    flex-direction: column;
+    margin-top: 70px;
+    margin-right: 100px;
+    width: 500px;
+    height: 600px;
+    background-color: white;
+}
+
+#productName {
+    font-size: 40px 
+}
+
+#productDescription {
+    font-size: 20px
+}

@@ -1,0 +1,17 @@
+<% layout('layout/boilerplate') %>
+
+
+<form id="batata" method="POST" action="/products">
+    <label for="productName">Product name</label>
+    <input id="productName" name="product[name]" type="text">
+    <p></p>
+    <label for="productDescription">Product description</label>
+    <input id="productDescription" name="product[description]" type="text">
+    <p></p>
+    <label for="productPrice">Product price</label>
+    <input id="productPrice" name="product[price]" type="number">
+    <p></p>
+    <label for="productOnsale">Onsale</label>
+    <input value="true" id="productOnsale" name="product[onsale]" type="checkbox">
+    <button>Submit</button>
+</form>

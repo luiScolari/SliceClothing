@@ -1,0 +1,50 @@
+.salesContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: #FFD780;
+}
+
+.saleImgContainer {
+    max-width: 100%;
+    font-size: 15px;
+    inline-size: 40%;
+    overflow-wrap: break-word;
+}
+
+.saleImg {
+    width: 100%;
+}
+
+.imgsGrid {
+    display: flex;
+    width: 70%;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.gridItem {
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    height: 320px;
+}
+.gridImgATAG {
+    width: 50%;
+    height: 50%;
+}
+
+.gridImg {
+    width: 100%;
+    height: 100%;  
+}
+
+#img {
+    width: 40%;
+}
