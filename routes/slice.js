@@ -7,11 +7,9 @@ router.route('/')
     .get(slice.index)
 
 router.route('/products')
-    .post(slice.createNewProduct)
-
-router.route('/products/new')
-    .get(slice.renderNewForm)
+    .post(slice.storeProductRequest)
 
 router.route('/products/:id')
     .get(slice.renderDetailsView)
+    
 module.exports = router

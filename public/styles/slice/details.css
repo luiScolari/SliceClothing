@@ -1,0 +1,66 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 1000px;
+}
+
+.productImgDiv {
+    margin-top: 70px;
+    margin-left: 100px;
+}
+
+.productImg {
+    width: 500px;
+    height: 600px;
+}
+
+.rightBar {
+    display: flex;
+    flex-direction: column;
+    margin-top: 70px;
+    margin-right: 100px;
+    width: 500px;
+    height: 600px;
+    background-color: white;
+}
+
+.colorRadioButtons {
+    border: 1px solid red;
+    width: 50px; 
+    height: 50px; 
+    appearance: none  
+}
+
+.colorRadioButtons:nth-of-type(1):checked {
+    background-color: red;
+}
+.colorRadioButtons:nth-of-type(2):checked {
+    background-color: blue;
+}
+.colorRadioButtons:nth-of-type(3):checked {
+    background-color: green;
+}
+
+.sizeRadioButtons {
+    border: 1px solid black;
+    width: 50px; 
+    height: 50px;
+    appearance: none  
+}
+
+.sizeRadioButtons:checked {
+    background-color: beige;
+}
+
+#invisible {
+    display: none;
+}
+
+#productName {
+    font-size: 40px 
+}
+
+#productDescription {
+    font-size: 20px
+}

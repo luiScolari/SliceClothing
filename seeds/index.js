@@ -17,7 +17,10 @@ const seedProducts = async () => {
             description: 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interest',
             price: 400,
             onsale: true,
-            imgSrc: 'https://images.unsplash.com/photo-1544441893-675973e31985?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'
+            imgSrc: 'https://images.unsplash.com/photo-1544441893-675973e31985?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
+            color: 'blue',
+            size: 'M',
+            qtyInStock: 5,
         })
         product.save()
     }

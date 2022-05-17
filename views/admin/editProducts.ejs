@@ -1,0 +1,59 @@
+<% layout('layout/boilerplateAdmin') %>
+    <link rel="stylesheet" href="/styles/admin/editProducts.css">
+
+    <body>
+        <div id="container">
+            <div class="card">
+                <h3>Edit product</h3>
+                <form id="batata" method="POST" action="admin/products/">
+                    <div class="formItem">
+                        <label for="productName">Product name</label>
+                        <input value="<%= product.name %>" id="productName" name="name" type="text">
+                    </div>
+                    <div class="formItem">
+                        <label for="productDescription">Product description</label>
+                        <textarea id="productDescription" name="description" type="text"><%= product.description %>
+                        </textarea>
+                    </div>
+                    <div class="formItem">
+                        <label for="productPrice">Product price</label>
+                        <input value="<%= product.price %>" id="productPrice" name="price" type="number">
+                    </div>
+                    <div class="formItem">
+                        <label for="productOnsale">Onsale</label>
+                        <input value="<%= product.onSale %>" id="productOnsale" name="onsale" type="checkbox">
+                    </div>
+                    <div class="formItem">
+                        <label for="productColor">Color</label>
+                        <input <%=product.color==='red' ? 'checked' : '' %> class="colorRadioButtons"
+                        type="radio" name="color" id="productColor" value="red">
+                        <input <%=product.color==='blue' ? 'checked' : '' %> class="colorRadioButtons" type="radio"
+                        name="color" id="productColor" value="blue">
+                        <input <%=product.color==='green' ? 'checked' : '' %> class="colorRadioButtons" type="radio"
+                        name="color" id="productColor" value="green">
+                    </div>
+                    <div class="formItem">
+                        <label for="productSize">Size</label>
+                        <input <%=product.size==='S' ? 'checked' : '' %> class="sizeRadioButtons" type="radio"
+                        name="size" id="productSize" value="S">
+                        <input <%=product.size==='M' ? 'checked' : '' %> class="sizeRadioButtons" type="radio"
+                        name="size" id="productSize" value="M">
+                        <input <%=product.size==='L' ? 'checked' : '' %> class="sizeRadioButtons" type="radio"
+                        name="size" id="productSize" value="L">
+                    </div>
+                    <div class="formItem">
+                        <label for="productQty">Quantity in stock</label>
+                        <input value="<%= product.qtyInStock %>" name="qtyInStock" id="productQty" type="number">
+                    </div>
+                    <div class="formItem">
+                        <label for="image">Product image</label>
+                        <input type="url" name="imgSrc" id="Image">
+                    </div>
+                    <button>Submit</button>
+                </form>
+            </div>
+            <div id="imgDiv">
+                <img id="productImg" src="<%= product.imgSrc  %>" alt="">
+            </div>
+        </div>
+    </body>

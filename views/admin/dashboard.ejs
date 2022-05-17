@@ -1,0 +1,61 @@
+<% layout('layout/boilerplateAdmin') %>
+<link rel="stylesheet" href="styles/admin/dashboard.css">
+
+<body>
+    <!-- Create new products -->
+    <div class="insertItem_card">
+        <h3>Create new product</h3>
+        <form id="batata" method="POST" action="admin/products">
+            <div class="formItem">
+                <label for="productName">Product name</label>
+                <input id="productName" name="name" type="text">
+            </div>
+            <div class="formItem">
+                <label for="productDescription">Product description</label>
+                <textarea id="productDescription" name="description" type="text"></textarea>
+            </div>
+            <div class="formItem">
+                <label for="productPrice">Product price</label>
+                <input id="productPrice" name="price" type="number">
+            </div>
+            <div class="formItem">
+                <label for="productOnsale">Onsale</label>
+                <input value="true" id="productOnsale" name="onsale" type="checkbox">
+            </div>
+            <div class="formItem">
+                <label for="productColor">Color</label>
+                <input class="colorRadioButtons" type="radio" name="color" id="productColor" value="red">
+                <input class="colorRadioButtons" type="radio" name="color" id="productColor" value="blue">
+                <input class="colorRadioButtons" type="radio" name="color" id="productColor" value="green">
+            </div>
+            <div class="formItem">
+                <label for="productSize">Size</label>
+                <input class="sizeRadioButtons" type="radio" name="size" id="productSize" value="S">
+                <input class="sizeRadioButtons" type="radio" name="size" id="productSize" value="M">
+                <input class="sizeRadioButtons" type="radio" name="size" id="productSize" value="L">
+            </div>
+            <div class="formItem">
+                <label for="productQty">Quantity in stock</label>
+                <input name="qtyInStock" id="productQty" type="number">
+            </div>
+            <div class="formItem">
+                <label for="image">Product image</label>
+                <input type="url" name="imgSrc" id="Image">
+            </div>
+            <button>Submit</button>
+        </form>
+        <!-- ### -->
+    </div>
+
+    <!-- All products -->
+    <div class="allProducts">
+        <% for (let product of products) { %>
+            <a href="/admin/products/<%= product._id %>">
+                <div class="productsCard">
+                    <img class="dashboardProductsImg" src="<%= product.imgSrc %>" alt="">
+                    <%= product.name %>
+                </div>
+                <% } %>
+            </a>
+    </div>
+</body>

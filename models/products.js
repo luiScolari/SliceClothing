@@ -6,7 +6,19 @@ const productSchema = Schema({
     description: String,
     price: Number,
     onsale: Boolean,
-    imgSrc: String
-})
+    imgSrc: String,
+    color: {
+        type: String,
+        enum: ['red', 'blue', 'green']
+    },
+    size: {
+        type: String,
+        enum: ['S', 'M', 'L']
+    },
+    qtyInStock: Number,
+    requests: [{type: Schema.Types.ObjectId, ref: 'Request'}]
+});
+
+
 
 module.exports = mongoose.model('Product', productSchema)
