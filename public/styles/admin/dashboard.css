@@ -69,3 +69,13 @@ body {
     width: 150px;
     height: 150px;
 }
+
+.requests {
+    display: flex;
+    flex-direction: column;
+}
+
+.request {
+    border: 2px solid black;
+    height: 200px;
+}

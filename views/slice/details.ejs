@@ -14,18 +14,18 @@
                 </h3>
             </div>
             <form method="POST" action="/products">
-                <div>
+                <!-- <div>
                     <h3>Color options</h3>
-                    <input class="colorRadioButtons" type="radio" name="color" id="productColor" value="red">
-                    <input class="colorRadioButtons" type="radio" name="color" id="productColor" value="blue">
-                    <input class="colorRadioButtons" type="radio" name="color" id="productColor" value="green">
-                    <input value="<%= product._id %>" type="checkbox" checked name="id" id="invisible">
-                </div>
+                    <input class="colorRadioButtons" type="radio" name="items[color]" id="productColor" value="red">
+                    <input class="colorRadioButtons" type="radio" name="items[color]" id="productColor" value="blue">
+                    <input class="colorRadioButtons" type="radio" name="items[color]" id="productColor" value="green">
+                    <input value="<%= //product._id %>" type="checkbox" checked name="id" id="invisible">
+                </div> -->
                 <div>
                     <h3>Size options</h3>
-                    <input class="sizeRadioButtons" type="radio" name="size" id="productSize" value="S">
-                    <input class="sizeRadioButtons" type="radio" name="size" id="productSize" value="M">
-                    <input class="sizeRadioButtons" type="radio" name="size" id="productSize" value="L">
+                    <input class="sizeRadioButtons" type="radio" name="items[size]" id="productSize" value="S">
+                    <input class="sizeRadioButtons" type="radio" name="items[size]" id="productSize" value="M">
+                    <input class="sizeRadioButtons" type="radio" name="items[size]" id="productSize" value="L">
                 </div>
                 <div>
                     <input name="qty" id="productQty" type="number">

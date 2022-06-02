@@ -4,21 +4,26 @@ const { Schema } = mongoose;
 const productSchema = Schema({
     name: String,
     description: String,
-    price: Number,
-    onsale: Boolean,
+    skus: [
+        {
+            sku: String,
+            price: Number,
+            quantity: Number,
+            feature: String,
+            onsale: Boolean,
+            size: {
+                type: String,
+                enum: ['S', 'M', 'L']
+            }
+        }
+    ],
     imgSrc: String,
-    color: {
-        type: String,
-        enum: ['red', 'blue', 'green']
-    },
-    size: {
-        type: String,
-        enum: ['S', 'M', 'L']
-    },
-    qtyInStock: Number,
-    requests: [{type: Schema.Types.ObjectId, ref: 'Request'}]
 });
 
-
+// Idk what to do at the moment, i need to create a 'product' and separate this from 
+// the qty of specific colors/sizes and create a new form on the dashboard to add 
+// a certain qty of products of that product
+// This video help me
+// https://www.youtube.com/watch?v=XGV1FstO6B0&list=PLN8GsERLAKgLhbmt6hgWT1hTTHkbcNJ5E
 
 module.exports = mongoose.model('Product', productSchema)
