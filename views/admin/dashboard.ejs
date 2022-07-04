@@ -15,28 +15,25 @@
                     <textarea id="productDescription" name="description" type="text"></textarea>
                 </div>
                 <div class="formItem">
+                    <label for="productSku">Sku</label>
+                    <input id="productSku" name="skus[sku]" type="text">
+                    <p>Example: sku: BJ(Bomber jacket) + size + any feature
+                        BJLZ
+                    </p>
+                </div>
+                <div class="formItem">
                     <label for="productPrice">Product price</label>
-                    <input id="productPrice" name="price" type="number">
-                </div>
-                <div class="formItem">
-                    <label for="productOnsale">Onsale</label>
-                    <input value="true" id="productOnsale" name="onsale" type="checkbox">
-                </div>
-                <div class="formItem">
-                    <label for="productColor">Color</label>
-                    <input class="colorRadioButtons" type="radio" name="color" id="productColor" value="red">
-                    <input class="colorRadioButtons" type="radio" name="color" id="productColor" value="blue">
-                    <input class="colorRadioButtons" type="radio" name="color" id="productColor" value="green">
+                    <input id="productPrice" name="skus[price]" type="number">
                 </div>
                 <div class="formItem">
                     <label for="productSize">Size</label>
-                    <input class="sizeRadioButtons" type="radio" name="size" id="productSize" value="S">
-                    <input class="sizeRadioButtons" type="radio" name="size" id="productSize" value="M">
-                    <input class="sizeRadioButtons" type="radio" name="size" id="productSize" value="L">
+                    <input class="sizeRadioButtons" type="radio" name="skus[size]" id="productSize" value="S">
+                    <input class="sizeRadioButtons" type="radio" name="skus[size]" id="productSize" value="M">
+                    <input class="sizeRadioButtons" type="radio" name="skus[size]" id="productSize" value="L">
                 </div>
                 <div class="formItem">
                     <label for="productQty">Quantity in stock</label>
-                    <input name="qtyInStock" id="productQty" type="number">
+                    <input name="skus[quantity]" id="productQty" type="number">
                 </div>
                 <div class="formItem">
                     <label for="image">Product image</label>

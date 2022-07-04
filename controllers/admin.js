@@ -1,6 +1,7 @@
 const Admin = require('../models/admins');
 const Product = require('../models/products');
 const Order = require('../models/orders');
+const { findById } = require('../models/products');
 
 module.exports.renderAdminLogin = async (req, res) => {
     if (!req.session.admin_id) {
@@ -28,13 +29,10 @@ module.exports.loginAdmin = async (req, res) => {
 }
 
 module.exports.insertNewProduct = async (req, res) => {
-    if (req.session.admin_id) {
-        const newProduct = await new Product(req.body)
-        newProduct.save()
-        res.redirect('/admin')
-    } else {
-        res.send('not here')
-    }
+    const newProduct = await new Product(req.body)
+    console.log(newProduct)
+    res.redirect('/admin')
+
 }
 
 module.exports.renderEditProductForm = async (req, res) => {
@@ -48,19 +46,22 @@ module.exports.renderEditProductForm = async (req, res) => {
 }
 
 module.exports.editProduct = async (req, res) => {
-    res.send(req.body)
+    console.log(req.body)
+    res.redirect('/admin')
 }
 
 
-
-// <!-- <div class="requests">
-// <% for (let request of requests) { %>
-//     <div class="request">
-//         <span>
-//             <%= request.qty %>
-//                 <%= request.product[0].name %>
-//         </span>
-//         <span>Size <%= request.size %></span> <span>Avaliable <%= request.product[0].size %></span>
-//     </div>
-//     <% } %>
-// </div> -->
+module.exports.appendSku = async (req, res) => {
+    const { id } = req.params
+    const product = await Product.findById(id)
+    console.log(product)
+    for (let sku of product.skus) {
+        if (sku.size === req.body.size) {
+            sku.quantity += req.body.quantity
+            sku.price = req.body.price
+            console.log(sku)
+        }
+    }
+    // await product.save()
+    res.redirect(`/admin/products/${id}`)
+}

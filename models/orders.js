@@ -9,8 +9,6 @@ const productRequestSchema = Schema({
             sku: String,
             price: Number,
             quantity: Number,
-            feature: String,
-            onsale: Boolean,
         }
     ],
 });

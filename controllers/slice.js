@@ -18,21 +18,21 @@ module.exports.storeProductRequest = async (req, res) => {
     },
         { "skus.$": 1 })
 
-    console.log(product.skus[0].sku)
     const order = await new Order({
         items: [{
             sku: product.skus[0].sku,
             price: product.skus[0].price,
             quantity: req.body.qty,
-            feature: product.skus[0].feature,
             onsale: false
         }
         ]
     })
-    console.log(order)
-    // req.session.user_id
-    console.log(req.body)
-    // const order = await req.body
+    
+    await Product.update({
+        
+    })
+    // im having problems with the update from the $elemMatch scope
+    await order.save()
     res.redirect('/')
     // https://www.youtube.com/watch?v=08oWQbaSoEE
     // https://www.youtube.com/watch?v=1fAUUIx-NLs

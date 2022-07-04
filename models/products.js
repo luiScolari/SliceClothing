@@ -9,8 +9,6 @@ const productSchema = Schema({
             sku: String,
             price: Number,
             quantity: Number,
-            feature: String,
-            onsale: Boolean,
             size: {
                 type: String,
                 enum: ['S', 'M', 'L']

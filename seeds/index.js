@@ -16,18 +16,15 @@ const seedProducts = async () => {
             description: 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interest',
             skus: [
                 {
-                    sku: 'BJMZ',
+                    sku: 'BJM',
                     price: 200,
                     quantity: 20,
-                    feature: 'Ziper',
-                    onsale: false,
                     size: 'M'
                 },
                 {
-                    sku: 'BJLNZ',
+                    sku: 'BJL',
                     price: 150,
                     quantity: 25,
-                    feature: 'noZiper',
                     size: 'L'
                 }
             ],

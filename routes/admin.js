@@ -13,4 +13,7 @@ router.route('/products')
 router.route('/products/:id')
     .get(admin.renderEditProductForm)
     .put(admin.editProduct)
+
+router.route('/products/sku/:id')
+    .post(admin.appendSku)
 module.exports = router

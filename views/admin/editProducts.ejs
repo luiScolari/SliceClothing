@@ -5,7 +5,8 @@
         <div id="container">
             <div class="card">
                 <h3>Edit product</h3>
-                <form id="batata" method="POST" action="admin/products/">
+                <!-- the path below is relative, you will use inside admin/products, then will append product._id -->
+                <form id="batata" method="POST" action="<%= product._id %>?_method=PUT">
                     <div class="formItem">
                         <label for="productName">Product name</label>
                         <input value="<%= product.name %>" id="productName" name="name" type="text">
@@ -14,46 +15,59 @@
                         <label for="productDescription">Product description</label>
                         <textarea id="productDescription" name="description" type="text"><%= product.description %>
                         </textarea>
+                        <button>Submit</button>
+                </form>
+
+            </div>
+            <div class="stockCard">
+                <h2>Stock:</h2>
+                <% for (let i=0; i < product.skus.length; i ++) {%>
+                    <div class="skus">
+                        <div>
+                            Size: <%= product.skus[i].size %>
+                        </div>
+                        <div>
+                            Sku: <%= product.skus[i].sku %>
+                        </div>
+                        <div>
+                            Price: <%= product.skus[i].price %>
+                        </div>
+                        <div>
+                            Quantity in stock: <%= product.skus[i].quantity %>
+                        </div>
+                    </div>
+                    <% } %>
+            </div>
+            <div class="appendSku">
+                <!-- This path is absolute, when you put "/" before the path will be absolute -->
+                <form method="POST" action="/admin/products/sku/<%= product._id %>">
+                    <div class="formItem">
+                        <label for="productSku">Sku</label>
+                        <input id="productSku" name="sku" type="text">
+                        <p>Example: sku: BJ(Bomber jacket) + size + any feature
+                            BJLZ
+                        </p>
                     </div>
                     <div class="formItem">
                         <label for="productPrice">Product price</label>
-                        <input value="<%= product.price %>" id="productPrice" name="price" type="number">
-                    </div>
-                    <div class="formItem">
-                        <label for="productOnsale">Onsale</label>
-                        <input value="<%= product.onSale %>" id="productOnsale" name="onsale" type="checkbox">
-                    </div>
-                    <div class="formItem">
-                        <label for="productColor">Color</label>
-                        <input <%=product.color==='red' ? 'checked' : '' %> class="colorRadioButtons"
-                        type="radio" name="color" id="productColor" value="red">
-                        <input <%=product.color==='blue' ? 'checked' : '' %> class="colorRadioButtons" type="radio"
-                        name="color" id="productColor" value="blue">
-                        <input <%=product.color==='green' ? 'checked' : '' %> class="colorRadioButtons" type="radio"
-                        name="color" id="productColor" value="green">
+                        <input id="productPrice" name="price" type="number">
                     </div>
                     <div class="formItem">
                         <label for="productSize">Size</label>
-                        <input <%=product.size==='S' ? 'checked' : '' %> class="sizeRadioButtons" type="radio"
-                        name="size" id="productSize" value="S">
-                        <input <%=product.size==='M' ? 'checked' : '' %> class="sizeRadioButtons" type="radio"
-                        name="size" id="productSize" value="M">
-                        <input <%=product.size==='L' ? 'checked' : '' %> class="sizeRadioButtons" type="radio"
-                        name="size" id="productSize" value="L">
+                        <input class="sizeRadioButtons" type="radio" name="size" id="productSize" value="S">
+                        <input class="sizeRadioButtons" type="radio" name="size" id="productSize" value="M">
+                        <input class="sizeRadioButtons" type="radio" name="size" id="productSize" value="L">
                     </div>
                     <div class="formItem">
                         <label for="productQty">Quantity in stock</label>
-                        <input value="<%= product.qtyInStock %>" name="qtyInStock" id="productQty" type="number">
+                        <input name="quantity" id="productQty" type="number">
                     </div>
-                    <div class="formItem">
-                        <label for="image">Product image</label>
-                        <input type="url" name="imgSrc" id="Image">
-                    </div>
-                    <button>Submit</button>
+                    <button>SubmitSKU</button>
                 </form>
             </div>
-            <div id="imgDiv">
-                <img id="productImg" src="<%= product.imgSrc  %>" alt="">
-            </div>
+        </div>
+        <div id="imgDiv">
+            <img id="productImg" src="<%= product.imgSrc  %>" alt="">
+        </div>
         </div>
     </body>

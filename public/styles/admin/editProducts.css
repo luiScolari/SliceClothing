@@ -14,34 +14,9 @@
     margin-bottom: 10px;
 }
 
-.colorRadioButtons {
-    border: 1px solid red;
-    width: 50px; 
-    height: 50px; 
-    appearance: none  
-}
-
-.colorRadioButtons:nth-of-type(1):checked {
-    background-color: red;
-}
-.colorRadioButtons:nth-of-type(2):checked {
-    background-color: blue;
-}
-.colorRadioButtons:nth-of-type(3):checked {
-    background-color: green;
-}
-
-.sizeRadioButtons {
+.skus {
     border: 1px solid black;
-    width: 50px; 
-    height: 50px;
-    appearance: none  
+    margin-bottom: 10px;
 }
 
-.sizeRadioButtons:checked {
-    background-color: beige;
-}
 
-/* .card {
-
-} */
